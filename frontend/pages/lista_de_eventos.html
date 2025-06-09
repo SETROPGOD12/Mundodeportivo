@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio - Usuario</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header><h1>Inicio del Usuario</h1></header>
+  <nav>
+    <a href="perfil.html">Perfil</a>
+    <a href="creacion_evento.html">Crear Evento</a>
+    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+  </nav>
+  <div class="content">
+    <h2 id="bienvenida">Bienvenido, Usuario</h2>
+    <p>A continuación puedes explorar los eventos deportivos disponibles:</p>
+    <div id="eventos"></div>
+  </div>
+  <script src="../js/app.js"></script>
+  <script>
+    const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+    if (!usuario) {
+      alert("Debes iniciar sesión primero");
+      window.location.href = "../index.html";
+    } else {
+      document.getElementById("bienvenida").textContent = `Bienvenido, ${usuario.usuario}`;
+      mostrarEventos();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Evento</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header><h1>Crear un Evento Deportivo</h1></header>
+  <nav>
+    <a href="lista_de_eventos.html">Eventos</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+  </nav>
+  <div class="content">
+    <form onsubmit="guardarEvento(event)">
+      <input type="text" id="nombre" placeholder="Nombre del evento" required />
+      <input type="date" id="fecha" required />
+      <input type="text" id="ubicacion" placeholder="Ubicación" required />
+      <textarea id="descripcion" placeholder="Descripción" required></textarea>
+      <button type="submit">Crear Evento</button>
+    </form>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

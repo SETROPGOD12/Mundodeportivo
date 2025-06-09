@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrador - Eventos Deportivos</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js"></script>
+</head>
+<body>
+  <header><h1>Panel de Administrador</h1></header>
+  <nav>
+    <a href="lista_de_eventos.html">Eventos</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+  </nav>
+  <div class="content">
+    <h2>Asignar Rol a Usuario</h2>
+    <form id="roleForm" onsubmit="asignarRol(event)">
+      <label for="username">Nombre de usuario:</label>
+      <select id="username" required></select>
+      <label for="role">Selecciona un rol:</label>
+      <select id="role" required>
+        <option value="Entrenador">Entrenador</option>
+        <option value="Jugador">Jugador</option>
+        <option value="Espectador">Espectador</option>
+      </select>
+      <button type="submit">Asignar Rol</button>
+    </form>
+    <div id="roleList"></div>
+    <div id="usuariosList"></div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Eventos Deportivos. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
