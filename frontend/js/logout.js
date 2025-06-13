@@ -1,8 +1,13 @@
-// logout.js
-document.addEventListener('DOMContentLoaded', () => {
-    //eliminar todos los datos agregados
-    localStorage.clear();
 
-    //redireccionar al login 
-    window.location.href = './index.html';
-});
+function logout() {
+  // Borrar datos del usuario (ajusta según lo que guardes)
+  localStorage.clear();
+
+  // Redirigir al login reemplazando historial (no se puede volver atrás)
+  const path = window.location.pathname;
+  const depth = path.split('/').filter(Boolean).length;
+  const prefix = '../'.repeat(depth - 1);
+
+  location.replace(`${prefix}index.html`);
+}
+

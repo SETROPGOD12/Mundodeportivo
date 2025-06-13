@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Inicio Usuario</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <script>
+  const rol = localStorage.getItem("rol");
+  if (!rol || rol != "3") {
+    location.replace("../index.html");
+  }
+</script>
+
 </head>
 <body>
     <header>
@@ -17,7 +24,7 @@
         <a href="lista_de_eventos.html">Eventos</a>
         <a href="creacion_evento.html">Crear Evento</a>
         <a href="crear_equipo.html">Crear Equipo</a>
-        <a href="../index.html">Cerrar Sesión</a>
+        <a href="#" onclick="logout()">Cerrar Sesión</a>
     </nav>
 
     <main>
@@ -39,5 +46,6 @@
             <a class="btn" href="crear_equipo.html">Crear Equipo</a>
         </section>
     </main>
+    <script src="../js/logout.js"></script>
 </body>
 </html>

@@ -4,13 +4,20 @@
   <meta charset="UTF-8">
   <title>Coordinador - Eventos Deportivos</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script>
+  const rol = localStorage.getItem("rol");
+  if (!rol || rol != "2") {
+    location.replace("../index.html");
+  }
+</script>
+
 </head>
 <body>
   <header><h1>Panel del Coordinador</h1></header>
   <nav>
     <a href="lista_de_eventos.html">Eventos</a>
     <a href="perfil.html">Perfil</a>
-    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+    <a href="#" onclick="logout()">Cerrar Sesión</a>
   </nav>
   <div class="content">
     <p>Desde aquí podés coordinar actividades, asignar jueces o revisar reportes.</p>
@@ -18,5 +25,6 @@
   <footer>
     <p>&copy; 2025 Eventos Deportivos. Todos los derechos reservados.</p>
   </footer>
+  <script src="../js/logout.js"></script>
 </body>
 </html>

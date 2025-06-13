@@ -5,13 +5,20 @@
   <title>Administrador - Eventos Deportivos</title>
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/app.js"></script>
+  <script>
+  const rol = localStorage.getItem("rol");
+  if (!rol || rol != "1") {
+    location.replace("../index.html");
+  }
+</script>
+
 </head>
 <body>
   <header><h1>Panel de Administrador</h1></header>
   <nav>
     <a href="lista_de_eventos.html">Eventos</a>
     <a href="perfil.html">Perfil</a>
-    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+    <a href="#" onclick="logout()">Cerrar Sesión</a>
   </nav>
   <div class="content">
     <h2>Asignar Rol a Usuario</h2>
@@ -33,5 +40,6 @@
   <footer>
     <p>&copy; 2025 Eventos Deportivos. Todos los derechos reservados.</p>
   </footer>
+  <script src="../js/logout.js"></script>
 </body>
 </html>
