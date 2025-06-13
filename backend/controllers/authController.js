@@ -27,5 +27,5 @@ export const login = async (req, res) => {
     if(!esValido) return res.status(401).json({message: 'Contraseña incorrecta'});
 
     const rol = await obtenerRolPorId(user.id_rol); 
-    res.status(200).json({message: 'Login exitoso'.rol});
+    res.status(200).json({message: 'Login exitoso', rol});
 };
